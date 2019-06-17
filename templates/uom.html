@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" type="text/css">
+
+{% extends 'base.html' %} {% block content %}
+
+<div class="row">
+    <ul class="collapsible" data-collapsible="accordion">
+</div>
+       <!-- Receipe Content Area -->
+        <div class="collapsible-header receipe-content-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-8">
+                        <div class="collapse show receipe-headline my-5">
+                          <h3>Unit of measure</h3>
+                          {% for uom in uom %}
+                            <div class="receipe-duration">
+                                <h4>
+                                    <a href= "{{url_for('delete_uom', uom_id =uom._id)}}"
+                                       class="waves-effect waves-light btn btn-danger">Del</a>
+                                    <a href= "{{url_for('edit_uom', uom_id =uom._id)}}"
+                                       class="waves-effect waves-light btn btn-primary">Edit</a>
+                                    {{uom.uom_name}}
+                                </h4>
+                            </div>
+                          {% endfor %}
+                        </div>
+                        <div class="row">
+                            <a href="{{url_for('new_uom')}}" class="waves-effect waves-light btn btn-success">
+                            <i class="fas fa-caret-down"></i> Add Category</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ul>
+</div>
+{% endblock %}
+
