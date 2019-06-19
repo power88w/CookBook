@@ -15,11 +15,36 @@ def get_prescription():
     return render_template('prescription.html',
                            prescription=mongo.db.prescription.find())
 
-@app.route('/')
+
 @app.route('/add_prescription')
 def add_prescription():
     return render_template('addprescription.html',
-                           categories=mongo.db.prescription.find())
+                           prescription=mongo.db.prescription.find(),
+                           allergen=mongo.db.allergen.find(),
+                           allergen2=mongo.db.allergen.find(),
+                           allergen3=mongo.db.allergen.find(),
+                           allergen4=mongo.db.allergen.find(),
+                           uom1=mongo.db.uom.find(),
+                           uom2=mongo.db.uom.find(),
+                           uom3=mongo.db.uom.find(),
+                           uom4=mongo.db.uom.find(),
+                           uom5=mongo.db.uom.find(),
+                           uom6=mongo.db.uom.find(),
+                           uom7=mongo.db.uom.find(),
+                           uom8=mongo.db.uom.find(),
+                           uom9=mongo.db.uom.find(),
+                           uom10=mongo.db.uom.find(),
+                           ingredients1=mongo.db.ingredients.find(),
+                           ingredients2=mongo.db.ingredients.find(),
+                           ingredients3=mongo.db.ingredients.find(),
+                           ingredients4=mongo.db.ingredients.find(),
+                           ingredients5=mongo.db.ingredients.find(),
+                           ingredients6=mongo.db.ingredients.find(),
+                           ingredients7=mongo.db.ingredients.find(),
+                           ingredients8=mongo.db.ingredients.find(),
+                           ingredients9=mongo.db.ingredients.find(),
+                           ingredients10=mongo.db.ingredients.find())
+
 
 @app.route('/insert_prescription', methods=['POST'])
 def insert_prescription():
@@ -28,12 +53,33 @@ def insert_prescription():
     return redirect(url_for('get_prescription'))
 
 
-#Allergeny
 
+
+
+@app.route('/update_task/<task_id>', methods=["POST"])
+def update_task(task_id):
+    tasks = mongo.db.tasks
+    tasks.update( {'_id': ObjectId(task_id)},
+    {
+        'task_name':request.form.get('task_name'),
+        'category_name':request.form.get('category_name'),
+        'task_description': request.form.get('task_description'),
+        'due_date': request.form.get('due_date'),
+        'is_urgent':request.form.get('is_urgent')
+    })
+    return redirect(url_for('get_tasks'))
+
+
+
+
+#Allergeny
+@app.route('/')
 @app.route('/get_allergen')
 def get_allergen():
     return render_template('allergen.html',
-                            allergen=mongo.db.allergen.find())
+                            allergen=mongo.db.allergen.find().sort('allergen_name', 1))
+
+
 
 @app.route('/delete_allergen/<allergen_id>')
 def delete_allergen(allergen_id):
@@ -112,7 +158,7 @@ def new_uom():
 @app.route('/get_ingredients')
 def get_ingredients():
     return render_template('ingredients.html',
-                            ingredients=mongo.db.ingredients.find())
+                            ingredients=mongo.db.ingredients.find().sort('ingredients_name', 1))
 
 @app.route('/delete_ingredients/<ingredients_id>')
 def delete_ingredients(ingredients_id):
@@ -136,8 +182,27 @@ def update_ingredients(ingredients_id):
 def insert_ingredients():
     ingredients = mongo.db.ingredients
     ingredients_doc = {'ingredients_name': request.form.get('ingredients_name')}
+    ingredients_doc2 = {'ingredients_name': request.form.get('ingredients_name2')}
+    ingredients_doc3 = {'ingredients_name': request.form.get('ingredients_name3')}
+    ingredients_doc4 = {'ingredients_name': request.form.get('ingredients_name4')}
+    ingredients_doc5 = {'ingredients_name': request.form.get('ingredients_name5')}
+    ingredients_doc6 = {'ingredients_name': request.form.get('ingredients_name6')}
+    ingredients_doc7 = {'ingredients_name': request.form.get('ingredients_name7')}
+    ingredients_doc8 = {'ingredients_name': request.form.get('ingredients_name8')}
+    ingredients_doc9 = {'ingredients_name': request.form.get('ingredients_name9')}
+    ingredients_doc10 = {'ingredients_name': request.form.get('ingredients_name10')}
     ingredients.insert_one(ingredients_doc)
+    ingredients.insert_one(ingredients_doc2)
+    ingredients.insert_one(ingredients_doc3)
+    ingredients.insert_one(ingredients_doc4)
+    ingredients.insert_one(ingredients_doc5)
+    ingredients.insert_one(ingredients_doc6)
+    ingredients.insert_one(ingredients_doc7)
+    ingredients.insert_one(ingredients_doc8)
+    ingredients.insert_one(ingredients_doc9)
+    ingredients.insert_one(ingredients_doc10)
     return redirect(url_for('get_ingredients'))
+
 
 @app.route('/new_ingredients')
 def new_ingredients():
