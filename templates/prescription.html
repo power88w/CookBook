@@ -11,27 +11,36 @@
                     <div class="row">
                         <div class="col-12 col-lg-3">
                             <select name="select1" id="select1">
-                                <option value="1">All Receipies Categories</option>
-                                <option value="1">All Receipies Categories 2</option>
-                                <option value="1">All Receipies Categories 3</option>
-                                <option value="1">All Receipies Categories 4</option>
-                                <option value="1">All Receipies Categories 5</option>
+                                <option value="1">Choose Author.</option>
+                                {% for prescription in prescription1 %}
+                                            <option>{{prescription.disp_name}}</option>
+                                {% endfor %}
                             </select>
                         </div>
                         <div class="col-12 col-lg-3">
-                            <select name="select1" id="select2">
-                                <option value="1">All Receipies Categories</option>
-                                <option value="1">All Receipies Categories 2</option>
-                                <option value="1">All Receipies Categories 3</option>
-                                <option value="1">All Receipies Categories 4</option>
-                                <option value="1">All Receipies Categories 5</option>
+                            <select name="select1" id="select1">
+                                <option value="1">Choose Author.</option>
+                                {% for prescription in prescription2 %}
+                                            <option>{{prescription.disp_name}} </option>
+                                            <option>{{prescription.alle_02}} </option>
+                                {% endfor %}
                             </select>
                         </div>
                         <div class="col-12 col-lg-3">
-                            <input type="search" name="search" placeholder="Search Receipies">
+                            <select name="select1" id="select1">
+                                <option value="1">Choose Author.</option>
+                                {% for prescription in prescription3 %}
+                                            <option>{{prescription.disp_name}}</option>
+                                {% endfor %}
+                            </select>
                         </div>
-                        <div class="col-12 col-lg-3 text-right">
-                            <button type="submit" class="btn delicious-btn">Search</button>
+                        <div class="col-12 col-lg-3">
+                            <select name="select1" id="select1">
+                                <option value="1">Choose Author.</option>
+                                {% for prescription in prescription4 %}
+                                            <option>{{prescription.disp_name}}</option>
+                                {% endfor %}
+                            </select>
                         </div>
                     </div>
                 </form>
@@ -39,8 +48,7 @@
         </div>
 </div>
 
-
-{% for prescription in prescription %}
+{% for prescription in prescription5 %}
 
 <!---Zmienne--->
 

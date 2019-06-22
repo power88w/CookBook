@@ -9,11 +9,15 @@ app.config["MONGO_URI"] = 'mongodb+srv://root:zgadnij12345678910@myfirstcluster-
 
 mongo = PyMongo(app)
 
-
+@app.route('/')
 @app.route('/get_prescription')
 def get_prescription():
     return render_template('prescription.html',
-                           prescription=mongo.db.prescription.find())
+                           prescription1=mongo.db.prescription.find(),
+                           prescription2=mongo.db.prescription.find(),
+                           prescription3=mongo.db.prescription.find(),
+                           prescription4=mongo.db.prescription.find(),
+                           prescription5=mongo.db.prescription.find())
 
 
 @app.route('/add_prescription')
@@ -73,7 +77,6 @@ def update_task(task_id):
 
 
 #Allergeny
-@app.route('/')
 @app.route('/get_allergen')
 def get_allergen():
     return render_template('allergen.html',

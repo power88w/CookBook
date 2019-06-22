@@ -1,0 +1,5 @@
+#EXTM3U 
+#EXTVLCOPT--http-reconnect=true 
+#EXTINF:-1,TVP 1 HD
+#EXTVLCOPT:program=15037
+http://192.168.1.3:8001/1:0:1:3ABD:514:13E:820000:0:0:0:
