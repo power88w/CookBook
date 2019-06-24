@@ -226,34 +226,35 @@ def update_prescription(prescription_id):
 
     return redirect(url_for('get_prescription'))
 
+
 @app.route('/add_prescription')
 def add_prescription():
     return render_template('addprescription.html',
                            prescription=mongo.db.prescription.find(),
-                           allergen=mongo.db.allergen.find(),
-                           allergen2=mongo.db.allergen.find(),
-                           allergen3=mongo.db.allergen.find(),
-                           allergen4=mongo.db.allergen.find(),
-                           uom1=mongo.db.uom.find(),
-                           uom2=mongo.db.uom.find(),
-                           uom3=mongo.db.uom.find(),
-                           uom4=mongo.db.uom.find(),
-                           uom5=mongo.db.uom.find(),
-                           uom6=mongo.db.uom.find(),
-                           uom7=mongo.db.uom.find(),
-                           uom8=mongo.db.uom.find(),
-                           uom9=mongo.db.uom.find(),
-                           uom10=mongo.db.uom.find(),
-                           ingredients1=mongo.db.ingredients.find(),
-                           ingredients2=mongo.db.ingredients.find(),
-                           ingredients3=mongo.db.ingredients.find(),
-                           ingredients4=mongo.db.ingredients.find(),
-                           ingredients5=mongo.db.ingredients.find(),
-                           ingredients6=mongo.db.ingredients.find(),
-                           ingredients7=mongo.db.ingredients.find(),
-                           ingredients8=mongo.db.ingredients.find(),
-                           ingredients9=mongo.db.ingredients.find(),
-                           ingredients10=mongo.db.ingredients.find())
+                           allergen=mongo.db.allergen.find().sort('allergen_name', 1),
+                           allergen2=mongo.db.allergen.find().sort('allergen_name', 1),
+                           allergen3=mongo.db.allergen.find().sort('allergen_name', 1),
+                           allergen4=mongo.db.allergen.find().sort('allergen_name', 1),
+                           uom1=mongo.db.uom.find().sort('uom_name', 1),
+                           uom2=mongo.db.uom.find().sort('uom_name', 1),
+                           uom3=mongo.db.uom.find().sort('uom_name', 1),
+                           uom4=mongo.db.uom.find().sort('uom_name', 1),
+                           uom5=mongo.db.uom.find().sort('uom_name', 1),
+                           uom6=mongo.db.uom.find().sort('uom_name', 1),
+                           uom7=mongo.db.uom.find().sort('uom_name', 1),
+                           uom8=mongo.db.uom.find().sort('uom_name', 1),
+                           uom9=mongo.db.uom.find().sort('uom_name', 1),
+                           uom10=mongo.db.uom.find().sort('uom_name', 1),
+                           ingredients1=mongo.db.ingredients.find().sort('ingredients_name', 1),
+                           ingredients2=mongo.db.ingredients.find().sort('ingredients_name', 1),
+                           ingredients3=mongo.db.ingredients.find().sort('ingredients_name', 1),
+                           ingredients4=mongo.db.ingredients.find().sort('ingredients_name', 1),
+                           ingredients5=mongo.db.ingredients.find().sort('ingredients_name', 1),
+                           ingredients6=mongo.db.ingredients.find().sort('ingredients_name', 1),
+                           ingredients7=mongo.db.ingredients.find().sort('ingredients_name', 1),
+                           ingredients8=mongo.db.ingredients.find().sort('ingredients_name', 1),
+                           ingredients9=mongo.db.ingredients.find().sort('ingredients_name', 1),
+                           ingredients10=mongo.db.ingredients.find().sort('ingredients_name', 1))
 
 
 @app.route('/insert_prescription', methods=['POST'])
@@ -358,6 +359,8 @@ def insert_ingredients():
     ingredients.insert_one(ingredients_doc8)
     ingredients.insert_one(ingredients_doc9)
     ingredients.insert_one(ingredients_doc10)
+    ingredients.remove({'ingredients_name': None})
+    ingredients.remove({'ingredients_name': ""})
     return redirect(url_for('get_ingredients'))
 
 
