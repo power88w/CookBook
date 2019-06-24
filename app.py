@@ -9,15 +9,177 @@ app.config["MONGO_URI"] = 'mongodb+srv://root:zgadnij12345678910@myfirstcluster-
 
 mongo = PyMongo(app)
 
+#Allergeny
+@app.route('/get_allergen')
+def get_allergen():
+    return render_template('allergen.html',
+                            allergen=mongo.db.allergen.find().sort('allergen_name', 1))
+
+
+
+@app.route('/delete_allergen/<allergen_id>')
+def delete_allergen(allergen_id):
+    mongo.db.allergen.remove({'_id': ObjectId(allergen_id)})
+    return redirect(url_for('get_allergen'))
+
+@app.route('/edit_allergen/<allergen_id>')
+def edit_allergen(allergen_id):
+    return render_template('editallergen.html',
+                           allergen=mongo.db.allergen.find_one(
+                           {'_id': ObjectId(allergen_id)}))
+
+@app.route('/update_allergen/<allergen_id>', methods=['POST'])
+def update_allergen(allergen_id):
+    mongo.db.allergen.update(
+        {'_id': ObjectId(allergen_id)},
+        {'allergen_name': request.form.get('allergen_name')})
+    return redirect(url_for('get_allergen'))
+
+@app.route('/insert_allergen', methods=['POST'])
+def insert_allergen():
+    allergen = mongo.db.allergen
+    allergen_doc = {'allergen_name': request.form.get('allergen_name')}
+    allergen.insert_one(allergen_doc)
+    return redirect(url_for('get_allergen'))
+
+@app.route('/new_allergen')
+def new_allergen():
+    return render_template('addallergen.html')
+
+#Koniec Allergenów
+
 @app.route('/')
 @app.route('/get_prescription')
 def get_prescription():
     return render_template('prescription.html',
-                           prescription1=mongo.db.prescription.find(),
-                           prescription2=mongo.db.prescription.find(),
-                           prescription3=mongo.db.prescription.find(),
-                           prescription4=mongo.db.prescription.find(),
-                           prescription5=mongo.db.prescription.find())
+                           prescription1=mongo.db.prescription.find().sort('prescription_name', 1),
+                           prescription2=mongo.db.prescription.find().sort('prescription_name', 1),
+                           prescription3=mongo.db.prescription.find().sort('prescription_name', 1),
+                           prescription4=mongo.db.prescription.find().sort('prescription_name', 1),
+                           prescription5=mongo.db.prescription.find().sort('prescription_name', 1),
+                           prescription6=mongo.db.prescription.find().sort('prescription_name', 1),
+                           allergen=mongo.db.allergen.find().sort('allergen_name', 1))
+
+
+
+
+@app.route('/get_prescriptionlist')
+def get_prescriptionlist():
+    return render_template('prescriptionlist.html',
+                            prescriptionlist=mongo.db.prescription.find().sort('prescription_name', 1))
+
+
+@app.route('/delete_prescription/<prescription_id>')
+def delete_prescription(prescription_id):
+    mongo.db.prescription.remove({'_id': ObjectId(prescription_id)})
+    return redirect(url_for('get_prescriptionlist'))
+
+
+@app.route('/edit_prescription/<prescription_id>')
+def edit_prescription(prescription_id):
+    the_prescription = mongo.db.prescription.find_one({"_id": ObjectId(prescription_id)})
+    all_allergens = mongo.db.allergen.find()
+    all_allergens2 = mongo.db.allergen.find()
+    all_allergens3 = mongo.db.allergen.find()
+    all_allergens4 = mongo.db.allergen.find()
+    all_ingredients1 = mongo.db.ingredients.find()
+    all_ingredients2 = mongo.db.ingredients.find()
+    all_ingredients3 = mongo.db.ingredients.find()
+    all_ingredients4 = mongo.db.ingredients.find()
+    all_ingredients5 = mongo.db.ingredients.find()
+    all_ingredients6 = mongo.db.ingredients.find()
+    all_ingredients7 = mongo.db.ingredients.find()
+    all_ingredients8 = mongo.db.ingredients.find()
+    all_ingredients9 = mongo.db.ingredients.find()
+    all_ingredients10 = mongo.db.ingredients.find()
+    all_uom1 = mongo.db.uom.find()
+    all_uom2 = mongo.db.uom.find()
+    all_uom3 = mongo.db.uom.find()
+    all_uom4 = mongo.db.uom.find()
+    all_uom5 = mongo.db.uom.find()
+    all_uom6 = mongo.db.uom.find()
+    all_uom7 = mongo.db.uom.find()
+    all_uom8 = mongo.db.uom.find()
+    all_uom9 = mongo.db.uom.find()
+    all_uom10 = mongo.db.uom.find()
+    return render_template('editprescription.html', prescription=the_prescription,
+                           allergen=all_allergens, allergen2=all_allergens2,
+                           allergen3=all_allergens3, allergen4=all_allergens4,
+                           ingredients1=all_ingredients1, ingredients2=all_ingredients2,
+                           ingredients3=all_ingredients3, ingredients4=all_ingredients4,
+                           ingredients5=all_ingredients5, ingredients6=all_ingredients6,
+                           ingredients7=all_ingredients7, ingredients8=all_ingredients8,
+                           ingredients9=all_ingredients9, ingredients10=all_ingredients10,
+                           uom1=all_uom1, uom2=all_uom2, uom3=all_uom3, uom4=all_uom4, uom5=all_uom5, uom6=all_uom6,
+                           uom7=all_uom7, uom8=all_uom8, uom9=all_uom9, uom10=all_uom10)
+
+
+
+
+@app.route('/update_prescription/<prescription_id>', methods=["POST"])
+def update_prescription(prescription_id):
+    prescription = mongo.db.prescription
+    prescription.update({'_id': ObjectId(prescription_id)},
+    {
+        'task_name':request.form.get('task_name'),
+        'category_name':request.form.get('category_name'),
+        'task_description': request.form.get('task_description'),
+        'due_date': request.form.get('due_date'),
+        'is_urgent':request.form.get('is_urgent'),
+        'disp_name':request.form.get('disp_name'),
+        'origin_country':request.form.get('origin_country'),
+        'prescription_name':request.form.get('prescription_name'),
+        'prep_time':request.form.get('prep_time'),
+        'cook_time':request.form.get('cook_time'),
+        'allergen_name': request.form.get('allergen_name'),
+        'alle_01': request.form.get('alle_01'),
+        'alle_02': request.form.get('alle_02'),
+        'alle_03': request.form.get('alle_03'),
+        'alle_04': request.form.get('alle_04'),
+        'step_01a': request.form.get('step_01a'),
+        'step_01b': request.form.get('step_01b'),
+        'step_02a': request.form.get('step_02a'),
+        'step_02b': request.form.get('step_02b'),
+        'step_03a': request.form.get('step_03a'),
+        'step_03b': request.form.get('step_03b'),
+        'step_04a': request.form.get('step_04a'),
+        'step_04b': request.form.get('step_04b'),
+        'pcs_01': request.form.get('pcs_01'),
+        'pcs_02': request.form.get('pcs_02'),
+        'pcs_03': request.form.get('pcs_03'),
+        'pcs_04': request.form.get('pcs_04'),
+        'pcs_05': request.form.get('pcs_05'),
+        'pcs_06': request.form.get('pcs_06'),
+        'pcs_07': request.form.get('pcs_07'),
+        'pcs_08': request.form.get('pcs_08'),
+        'pcs_09': request.form.get('pcs_09'),
+        'pcs_10': request.form.get('pcs_10'),
+        'uom_01': request.form.get('uom_01'),
+        'uom_02': request.form.get('uom_02'),
+        'uom_03': request.form.get('uom_03'),
+        'uom_04': request.form.get('uom_04'),
+        'uom_05': request.form.get('uom_05'),
+        'uom_06': request.form.get('uom_06'),
+        'uom_07': request.form.get('uom_07'),
+        'uom_08': request.form.get('uom_08'),
+        'uom_09': request.form.get('uom_09'),
+        'uom_10': request.form.get('uom_10'),
+        'ing_01': request.form.get('ing_01'),
+        'ing_02': request.form.get('ing_02'),
+        'ing_03': request.form.get('ing_03'),
+        'ing_04': request.form.get('ing_04'),
+        'ing_05': request.form.get('ing_05'),
+        'ing_06': request.form.get('ing_06'),
+        'ing_07': request.form.get('ing_07'),
+        'ing_08': request.form.get('ing_08'),
+        'ing_09': request.form.get('ing_09'),
+        'ing_10': request.form.get('ing_10'),
+        'prescription_pic01': request.form.get('prescription_pic01'),
+        'prescription_pic02': request.form.get('prescription_pic02')
+    })
+
+    return redirect(url_for('get_prescription'))
+
 
 
 @app.route('/add_prescription')
@@ -60,60 +222,6 @@ def insert_prescription():
 
 
 
-@app.route('/update_task/<task_id>', methods=["POST"])
-def update_task(task_id):
-    tasks = mongo.db.tasks
-    tasks.update( {'_id': ObjectId(task_id)},
-    {
-        'task_name':request.form.get('task_name'),
-        'category_name':request.form.get('category_name'),
-        'task_description': request.form.get('task_description'),
-        'due_date': request.form.get('due_date'),
-        'is_urgent':request.form.get('is_urgent')
-    })
-    return redirect(url_for('get_tasks'))
-
-
-
-
-#Allergeny
-@app.route('/get_allergen')
-def get_allergen():
-    return render_template('allergen.html',
-                            allergen=mongo.db.allergen.find().sort('allergen_name', 1))
-
-
-
-@app.route('/delete_allergen/<allergen_id>')
-def delete_allergen(allergen_id):
-    mongo.db.allergen.remove({'_id': ObjectId(allergen_id)})
-    return redirect(url_for('get_allergen'))
-
-@app.route('/edit_allergen/<allergen_id>')
-def edit_allergen(allergen_id):
-    return render_template('editallergen.html',
-                           allergen=mongo.db.allergen.find_one(
-                           {'_id': ObjectId(allergen_id)}))
-
-@app.route('/update_allergen/<allergen_id>', methods=['POST'])
-def update_allergen(allergen_id):
-    mongo.db.allergen.update(
-        {'_id': ObjectId(allergen_id)},
-        {'allergen_name': request.form.get('allergen_name')})
-    return redirect(url_for('get_allergen'))
-
-@app.route('/insert_allergen', methods=['POST'])
-def insert_allergen():
-    allergen = mongo.db.allergen
-    allergen_doc = {'allergen_name': request.form.get('allergen_name')}
-    allergen.insert_one(allergen_doc)
-    return redirect(url_for('get_allergen'))
-
-@app.route('/new_allergen')
-def new_allergen():
-    return render_template('addallergen.html')
-
-#Koniec Allergenów
 
 #UOM
 
@@ -139,6 +247,8 @@ def update_uom(uom_id):
         {'_id': ObjectId(uom_id)},
         {'uom_name': request.form.get('uom_name')})
     return redirect(url_for('get_uom'))
+
+
 
 @app.route('/insert_uom', methods=['POST'])
 def insert_uom():

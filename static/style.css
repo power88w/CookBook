@@ -39,8 +39,8 @@ p {
 a,
 a:hover,
 a:focus {
-  -webkit-transition-duration: 500ms;
-  transition-duration: 500ms;
+  -webkit-transition-duration: 1500ms;
+  transition-duration: 1500ms;
   text-decoration: none;
   outline: 0 solid transparent;
   color: #000000;

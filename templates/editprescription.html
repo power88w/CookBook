@@ -12,87 +12,95 @@
                 <div class="row">
                     <div class="col-12 col-md-12">
                         <div class="collapse show receipe-headline my-5">
-                            <form action="{{ url_for('update_prescription', task_id=task._id) }}" method="POST"  class="col s12">
+                            <form action="{{ url_for('update_prescription', prescription_id=prescription._id) }}"
+                                  method="POST"  class="col s12">
                                 <div class="form-row">
-
                                         <div class="form-group col-md-6">
                                           <label for="disp_name">Name</label>
                                           <input id="disp_name" name="disp_name"
-                                                 type="text" class="form-control" placeholder="Name">
+                                                 type="text" class="form-control" placeholder="Name"
+                                                 value="{{prescription.disp_name}}">
                                         </div>
                                         <div class="form-group col-md-6">
                                           <label for="origin_country">Origin</label>
                                           <input id="origin_country" name="origin_country"
-                                                 type="text" class="form-control" placeholder="Country of origin">
+                                                 type="text" class="form-control" placeholder="Country of origin"
+                                                 value="{{prescription.origin_country}}">
                                         </div>
                                         <div class="form-group col-md-12">
                                             <label for="prescription_name">Title</label>
                                             <input id="prescription_name" name="prescription_name"
                                                    type="text" class="form-control"
-                                                   placeholder="Please enter the name of the dish...">
+                                                   placeholder="Please enter the name of the dish..."
+                                                   value="{{prescription.prescription_name}}">
                                         </div>
                                         <div class="form-group col-md-6">
                                           <label for="prep_time">Preparation</label>
                                           <input id="prep_time" name="prep_time"
                                                  type="text" class="form-control"
-                                                 placeholder="Please enter preparation time...">
+                                                 placeholder="Please enter preparation time..."
+                                                 value="{{prescription.prep_time}}">
                                         </div>
                                         <div class="form-group col-md-6">
                                           <label for="cook_time">Cooking</label>
                                           <input id="cook_time" name="cook_time"
-                                                  type="text" class="form-control"
-                                                 placeholder="Please enter cooking time...">
+                                                 type="text" class="form-control"
+                                                 placeholder="Please enter cooking time..."
+                                                 value="{{prescription.cook_time}}">
                                         </div>
-
-
-                                        <label for="exampleFormControlTextarea1" class="col-md-12">Allergens</label>
-
-
+                                        <label class="col-md-12">Allergens</label>
                                         <div class="form-group col-md-3">
                                           <select id="alle_01" name="alle_01" class="form-control">
                                             <option value="" disabled selected>Choose allergen 1</option>
                                             {% for allergen in allergen %}
-                                            <option>{{allergen.allergen_name}}</option>
+                                                {% if allergen.allergen_name == prescription.alle_01 %}
+                                                <option value="{{allergen.allergen_name}}" selected>{{allergen.allergen_name}}</option>
+                                                {% else %}
+                                                <option value="{{allergen.allergen_name}}">{{allergen.allergen_name}}</option>
+                                                {% endif %}
                                             {% endfor %}
                                           </select>
                                         </div>
-
                                         <div class="form-group col-md-3">
                                           <select id="alle_02" name="alle_02" class="form-control">
                                             <option value="" disabled selected>Choose allergen 2</option>
                                             {% for allergen in allergen2 %}
-                                            <option>{{allergen.allergen_name}}</option>
+                                                {% if allergen.allergen_name == prescription.alle_02 %}
+                                                <option value="{{allergen.allergen_name}}" selected>{{allergen.allergen_name}}</option>
+                                                {% else %}
+                                                <option value="{{allergen.allergen_name}}">{{allergen.allergen_name}}</option>
+                                                {% endif %}
                                             {% endfor %}
                                           </select>
                                         </div>
-
                                         <div class="form-group col-md-3">
                                           <select id="alle_03" name="alle_03" class="form-control">
                                             <option value="" disabled selected>Choose allergen 3</option>>
                                             {% for allergen in allergen3 %}
-                                            <option>{{allergen.allergen_name}}</option>
+                                                {% if allergen.allergen_name == prescription.alle_03 %}
+                                                <option value="{{allergen.allergen_name}}" selected>{{allergen.allergen_name}}</option>
+                                                {% else %}
+                                                <option value="{{allergen.allergen_name}}">{{allergen.allergen_name}}</option>
+                                                {% endif %}
                                             {% endfor %}
                                           </select>
                                         </div>
-
                                         <div class="form-group col-md-3">
                                           <select id="alle_04" name="alle_04" class="form-control">
                                             <option value="" disabled selected>Choose allergen 4</option>
                                             {% for allergen in allergen4 %}
-                                            <option>{{allergen.allergen_name}}</option>
+                                                {% if allergen.allergen_name == prescription.alle_04 %}
+                                                <option value="{{allergen.allergen_name}}" selected>{{allergen.allergen_name}}</option>
+                                                {% else %}
+                                                <option value="{{allergen.allergen_name}}">{{allergen.allergen_name}}</option>
+                                                {% endif %}
                                             {% endfor %}
                                           </select>
                                         </div>
-
-
-
-
-
-
                                         <div class="form-group col-md-3">
-                                          <label for="inputState">Step</label>
+                                          <label for="step_01a">Step</label>
                                           <select id="step_01a" name="step_01a" class="form-control">
-                                            <option value="" disabled selected>Choose step</option>
+                                            <option value="{{prescription.step_01a}}">{{prescription.step_01a}}</option>
                                             <option>01.</option>
                                             <option>02.</option>
                                             <option>03.</option>
@@ -102,15 +110,12 @@
                                         <div class="form-group col-md-12">
                                             <label for="step_01b">Description 1</label>
                                             <textarea class="form-control" id="step_01b" name="step_01b" rows="3"
-                                                      placeholder="Please enter first step description..."></textarea>
+                                              placeholder="Please enter first step description...">{{prescription.step_01b}}</textarea>
                                         </div>
-
-
-
                                         <div class="form-group col-md-3">
-                                          <label for="inputState">Step</label>
+                                          <label for="step_02a">Step</label>
                                           <select id="step_02a" name="step_02a" class="form-control">
-                                            <option value="" disabled selected>Choose step</option>
+                                            <option value="{{prescription.step_02a}}">{{prescription.step_02a}}</option>
                                             <option>01.</option>
                                             <option>02.</option>
                                             <option>03.</option>
@@ -118,16 +123,14 @@
                                           </select>
                                         </div>
                                         <div class="form-group col-md-12">
-                                            <label for="step_01b">Description 2</label>
+                                            <label for="step_02b">Description 2</label>
                                             <textarea class="form-control" id="step_02b" name="step_02b" rows="3"
-                                                      placeholder="Please enter first step description..."></textarea>
+                                              placeholder="Please enter first step description...">{{prescription.step_02b}}</textarea>
                                         </div>
-
-
                                         <div class="form-group col-md-3">
-                                          <label for="inputState">Step</label>
+                                          <label for="step_03a">Step</label>
                                           <select id="step_03a" name="step_03a" class="form-control">
-                                            <option value="" disabled selected>Choose step</option>
+                                            <option value="{{prescription.step_03a}}">{{prescription.step_03a}}</option>
                                             <option>01.</option>
                                             <option>02.</option>
                                             <option>03.</option>
@@ -135,16 +138,14 @@
                                           </select>
                                         </div>
                                         <div class="form-group col-md-12">
-                                            <label for="step_01b">Description 3</label>
+                                            <label for="step_03b">Description 3</label>
                                             <textarea class="form-control" id="step_03b" name="step_03b" rows="3"
-                                                      placeholder="Please enter first step description..."></textarea>
+                                              placeholder="Please enter first step description...">{{prescription.step_03b}}</textarea>
                                         </div>
-
-
                                         <div class="form-group col-md-3">
-                                          <label for="inputState">Step</label>
+                                          <label for="step_04a">Step</label>
                                           <select id="step_04a" name="step_04a" class="form-control">
-                                            <option value="" disabled selected>Choose step</option>
+                                            <option value="{{prescription.step_04a}}">{{prescription.step_04a}}</option>
                                             <option>01.</option>
                                             <option>02.</option>
                                             <option>03.</option>
@@ -152,31 +153,27 @@
                                           </select>
                                         </div>
                                         <div class="form-group col-md-12">
-                                            <label for="step_01b">Description 4</label>
+                                            <label for="step_04b">Description 4</label>
                                             <textarea class="form-control" id="step_04b" name="step_04b" rows="3"
-                                                      placeholder="Please enter first step description..."></textarea>
+                                              placeholder="Please enter first step description...">{{prescription.step_04b}}</textarea>
                                         </div>
-
-
-
-
-                                        <!------------------Kolejny-Krok------------------->
-
-
-
                                         <label class="col-md-12">Ingredients</label>
                                         <div class="form-group col-md-1">
                                           <h5 class="form-control">1.</h5>
                                         </div>
                                         <div class="form-group col-md-2">
                                           <input type="text" class="form-control" id="pcs_01" name="pcs_01"
-                                                 placeholder="Quantity">
+                                                 placeholder="Quantity" value="{{prescription.pcs_01}}">
                                         </div>
                                         <div class="form-group col-md-3">
                                           <select id="uom_01" name="uom_01" class="form-control">
                                             <option value="" disabled selected>Choose Unit of measure.</option>
                                             {% for uom in uom1 %}
-                                            <option>{{uom.uom_name}}</option>
+                                                {% if uom.uom_name == prescription.uom_01 %}
+                                                <option value="{{uom.uom_name}}" selected>{{uom.uom_name}}</option>
+                                                {% else %}
+                                                <option value="{{uom.uom_name}}">{{uom.uom_name}}</option>
+                                                {% endif %}
                                             {% endfor %}
                                           </select>
                                         </div>
@@ -184,30 +181,30 @@
                                           <select id="ing_01" name="ing_01" class="form-control">
                                             <option value="" disabled selected>Choose the right ingredient...</option>
                                             {% for ingredients in ingredients1 %}
-                                            <option>{{ingredients.ingredients_name}}</option>
+                                                {% if ingredients.ingredients_name == prescription.ing_01 %}
+                                                <option value="{{ingredients.ingredients_name}}" selected>{{ingredients.ingredients_name}}</option>
+                                                {% else %}
+                                                <option value="{{ingredients.ingredients_name}}">{{ingredients.ingredients_name}}</option>
+                                                {% endif %}
                                             {% endfor %}
                                           </select>
                                         </div>
-
-
-
-
-
-
-
-
                                         <div class="form-group col-md-1">
                                           <h5 class="form-control">2.</h5>
                                         </div>
                                         <div class="form-group col-md-2">
                                           <input type="text" class="form-control" id="pcs_02" name="pcs_02"
-                                                 placeholder="Quantity">
+                                                 placeholder="Quantity" value="{{prescription.pcs_02}}">
                                         </div>
                                         <div class="form-group col-md-3">
                                           <select id="uom_02" name="uom_02" class="form-control">
                                             <option value="" disabled selected>Choose Unit of measure.</option>
                                             {% for uom in uom2 %}
-                                            <option>{{uom.uom_name}}</option>
+                                                {% if uom.uom_name == prescription.uom_02 %}
+                                                <option value="{{uom.uom_name}}" selected>{{uom.uom_name}}</option>
+                                                {% else %}
+                                                <option value="{{uom.uom_name}}">{{uom.uom_name}}</option>
+                                                {% endif %}
                                             {% endfor %}
                                           </select>
                                         </div>
@@ -215,26 +212,30 @@
                                           <select id="ing_02" name="ing_02" class="form-control">
                                             <option value="" disabled selected>Choose the right ingredient...</option>
                                             {% for ingredients in ingredients2 %}
-                                            <option>{{ingredients.ingredients_name}}</option>
+                                                {% if ingredients.ingredients_name == prescription.ing_02 %}
+                                                <option value="{{ingredients.ingredients_name}}" selected>{{ingredients.ingredients_name}}</option>
+                                                {% else %}
+                                                <option value="{{ingredients.ingredients_name}}">{{ingredients.ingredients_name}}</option>
+                                                {% endif %}
                                             {% endfor %}
                                           </select>
                                         </div>
-
-
-
-
                                         <div class="form-group col-md-1">
                                           <h5 class="form-control">3.</h5>
                                         </div>
                                         <div class="form-group col-md-2">
                                           <input type="text" class="form-control" id="pcs_03" name="pcs_03"
-                                                 placeholder="Quantity">
+                                                 placeholder="Quantity" value="{{prescription.pcs_01}}">
                                         </div>
                                         <div class="form-group col-md-3">
                                           <select id="uom_03" name="uom_03" class="form-control">
                                             <option value="" disabled selected>Choose Unit of measure.</option>
                                             {% for uom in uom3 %}
-                                            <option>{{uom.uom_name}}</option>
+                                                {% if uom.uom_name == prescription.uom_03 %}
+                                                <option value="{{uom.uom_name}}" selected>{{uom.uom_name}}</option>
+                                                {% else %}
+                                                <option value="{{uom.uom_name}}">{{uom.uom_name}}</option>
+                                                {% endif %}
                                             {% endfor %}
                                           </select>
                                         </div>
@@ -242,25 +243,30 @@
                                           <select id="ing_03" name="ing_03" class="form-control">
                                             <option value="" disabled selected>Choose the right ingredient...</option>
                                             {% for ingredients in ingredients3 %}
-                                            <option>{{ingredients.ingredients_name}}</option>
+                                                {% if ingredients.ingredients_name == prescription.ing_03 %}
+                                                <option value="{{ingredients.ingredients_name}}" selected>{{ingredients.ingredients_name}}</option>
+                                                {% else %}
+                                                <option value="{{ingredients.ingredients_name}}">{{ingredients.ingredients_name}}</option>
+                                                {% endif %}
                                             {% endfor %}
                                           </select>
                                         </div>
-
-
-
                                         <div class="form-group col-md-1">
                                           <h5 class="form-control">4.</h5>
                                         </div>
                                         <div class="form-group col-md-2">
                                           <input type="text" class="form-control" id="pcs_04" name="pcs_04"
-                                                 placeholder="Quantity">
+                                                 placeholder="Quantity" value="{{prescription.pcs_04}}">
                                         </div>
                                         <div class="form-group col-md-3">
                                           <select id="uom_04" name="uom_04" class="form-control">
                                             <option value="" disabled selected>Choose Unit of measure.</option>
                                             {% for uom in uom4 %}
-                                            <option>{{uom.uom_name}}</option>
+                                                {% if uom.uom_name == prescription.uom_04 %}
+                                                <option value="{{uom.uom_name}}" selected>{{uom.uom_name}}</option>
+                                                {% else %}
+                                                <option value="{{uom.uom_name}}">{{uom.uom_name}}</option>
+                                                {% endif %}
                                             {% endfor %}
                                           </select>
                                         </div>
@@ -268,28 +274,30 @@
                                           <select id="ing_04" name="ing_04" class="form-control">
                                             <option value="" disabled selected>Choose the right ingredient...</option>
                                             {% for ingredients in ingredients4 %}
-                                            <option>{{ingredients.ingredients_name}}</option>
+                                                {% if ingredients.ingredients_name == prescription.ing_04 %}
+                                                <option value="{{ingredients.ingredients_name}}" selected>{{ingredients.ingredients_name}}</option>
+                                                {% else %}
+                                                <option value="{{ingredients.ingredients_name}}">{{ingredients.ingredients_name}}</option>
+                                                {% endif %}
                                             {% endfor %}
                                           </select>
                                         </div>
-
-
-
-
-
-
                                         <div class="form-group col-md-1">
                                           <h5 class="form-control">5.</h5>
                                         </div>
                                         <div class="form-group col-md-2">
                                           <input type="text" class="form-control" id="pcs_05" name="pcs_05"
-                                                 placeholder="Quantity">
+                                                 placeholder="Quantity" value="{{prescription.pcs_05}}">
                                         </div>
                                         <div class="form-group col-md-3">
                                           <select id="uom_05" name="uom_05" class="form-control">
                                             <option value="" disabled selected>Choose Unit of measure.</option>
                                             {% for uom in uom5 %}
-                                            <option>{{uom.uom_name}}</option>
+                                                {% if uom.uom_name == prescription.uom_05 %}
+                                                <option value="{{uom.uom_name}}" selected>{{uom.uom_name}}</option>
+                                                {% else %}
+                                                <option value="{{uom.uom_name}}">{{uom.uom_name}}</option>
+                                                {% endif %}
                                             {% endfor %}
                                           </select>
                                         </div>
@@ -297,7 +305,11 @@
                                           <select id="ing_05" name="ing_05" class="form-control">
                                             <option value="" disabled selected>Choose the right ingredient...</option>
                                             {% for ingredients in ingredients5 %}
-                                            <option>{{ingredients.ingredients_name}}</option>
+                                                {% if ingredients.ingredients_name == prescription.ing_05 %}
+                                                <option value="{{ingredients.ingredients_name}}" selected>{{ingredients.ingredients_name}}</option>
+                                                {% else %}
+                                                <option value="{{ingredients.ingredients_name}}">{{ingredients.ingredients_name}}</option>
+                                                {% endif %}
                                             {% endfor %}
                                           </select>
                                         </div>
@@ -312,13 +324,17 @@
                                         </div>
                                         <div class="form-group col-md-2">
                                           <input type="text" class="form-control" id="pcs_06" name="pcs_06"
-                                                 placeholder="Quantity">
+                                                 placeholder="Quantity" value="{{prescription.pcs_06}}">
                                         </div>
                                         <div class="form-group col-md-3">
                                           <select id="uom_06" name="uom_06" class="form-control">
                                             <option value="" disabled selected>Choose Unit of measure.</option>
                                             {% for uom in uom6 %}
-                                            <option>{{uom.uom_name}}</option>
+                                                {% if uom.uom_name == prescription.uom_06 %}
+                                                <option value="{{uom.uom_name}}" selected>{{uom.uom_name}}</option>
+                                                {% else %}
+                                                <option value="{{uom.uom_name}}">{{uom.uom_name}}</option>
+                                                {% endif %}
                                             {% endfor %}
                                           </select>
                                         </div>
@@ -326,25 +342,30 @@
                                           <select id="ing_06" name="ing_06" class="form-control">
                                             <option value="" disabled selected>Choose the right ingredient...</option>
                                             {% for ingredients in ingredients6 %}
-                                            <option>{{ingredients.ingredients_name}}</option>
+                                                {% if ingredients.ingredients_name == prescription.ing_06 %}
+                                                <option value="{{ingredients.ingredients_name}}" selected>{{ingredients.ingredients_name}}</option>
+                                                {% else %}
+                                                <option value="{{ingredients.ingredients_name}}">{{ingredients.ingredients_name}}</option>
+                                                {% endif %}
                                             {% endfor %}
                                           </select>
                                         </div>
-
-
-
                                         <div class="form-group col-md-1">
                                           <h5 class="form-control">7.</h5>
                                         </div>
                                         <div class="form-group col-md-2">
                                           <input type="text" class="form-control" id="pcs_07" name="pcs_07"
-                                                 placeholder="Quantity">
+                                                 placeholder="Quantity" value="{{prescription.pcs_07}}">
                                         </div>
                                         <div class="form-group col-md-3">
                                           <select id="uom_07" name="uom_07" class="form-control">
                                             <option value="" disabled selected>Choose Unit of measure.</option>
                                             {% for uom in uom7 %}
-                                            <option>{{uom.uom_name}}</option>
+                                                {% if uom.uom_name == prescription.uom_07 %}
+                                                <option value="{{uom.uom_name}}" selected>{{uom.uom_name}}</option>
+                                                {% else %}
+                                                <option value="{{uom.uom_name}}">{{uom.uom_name}}</option>
+                                                {% endif %}
                                             {% endfor %}
                                           </select>
                                         </div>
@@ -352,26 +373,30 @@
                                           <select id="ing_07" name="ing_07" class="form-control">
                                             <option value="" disabled selected>Choose the right ingredient...</option>
                                             {% for ingredients in ingredients7 %}
-                                            <option>{{ingredients.ingredients_name}}</option>
+                                                {% if ingredients.ingredients_name == prescription.ing_07 %}
+                                                <option value="{{ingredients.ingredients_name}}" selected>{{ingredients.ingredients_name}}</option>
+                                                {% else %}
+                                                <option value="{{ingredients.ingredients_name}}">{{ingredients.ingredients_name}}</option>
+                                                {% endif %}
                                             {% endfor %}
                                           </select>
                                         </div>
-
-
-
-
                                         <div class="form-group col-md-1">
                                           <h5 class="form-control">8.</h5>
                                         </div>
                                         <div class="form-group col-md-2">
                                           <input type="text" class="form-control" id="pcs_08" name="pcs_08"
-                                                 placeholder="Quantity">
+                                                 placeholder="Quantity" value="{{prescription.pcs_01}}">
                                         </div>
                                         <div class="form-group col-md-3">
                                           <select id="uom_08" name="uom_08" class="form-control">
                                             <option value="" disabled selected>Choose Unit of measure.</option>
                                             {% for uom in uom8 %}
-                                            <option>{{uom.uom_name}}</option>
+                                                {% if uom.uom_name == prescription.uom_08 %}
+                                                <option value="{{uom.uom_name}}" selected>{{uom.uom_name}}</option>
+                                                {% else %}
+                                                <option value="{{uom.uom_name}}">{{uom.uom_name}}</option>
+                                                {% endif %}
                                             {% endfor %}
                                           </select>
                                         </div>
@@ -379,26 +404,30 @@
                                           <select id="ing_08" name="ing_08" class="form-control">
                                             <option value="" disabled selected>Choose the right ingredient...</option>
                                             {% for ingredients in ingredients8 %}
-                                            <option>{{ingredients.ingredients_name}}</option>
+                                                {% if ingredients.ingredients_name == prescription.ing_08 %}
+                                                <option value="{{ingredients.ingredients_name}}" selected>{{ingredients.ingredients_name}}</option>
+                                                {% else %}
+                                                <option value="{{ingredients.ingredients_name}}">{{ingredients.ingredients_name}}</option>
+                                                {% endif %}
                                             {% endfor %}
                                           </select>
                                         </div>
-
-
-
-
                                         <div class="form-group col-md-1">
                                           <h5 class="form-control">9.</h5>
                                         </div>
                                         <div class="form-group col-md-2">
                                           <input type="text" class="form-control" id="pcs_09" name="pcs_09"
-                                                 placeholder="Quantity">
+                                                 placeholder="Quantity" value="{{prescription.pcs_01}}">
                                         </div>
                                         <div class="form-group col-md-3">
                                           <select id="uom_09" name="uom_09" class="form-control">
                                             <option value="" disabled selected>Choose Unit of measure.</option>
                                             {% for uom in uom9 %}
-                                            <option>{{uom.uom_name}}</option>
+                                                {% if uom.uom_name == prescription.uom_09 %}
+                                                <option value="{{uom.uom_name}}" selected>{{uom.uom_name}}</option>
+                                                {% else %}
+                                                <option value="{{uom.uom_name}}">{{uom.uom_name}}</option>
+                                                {% endif %}
                                             {% endfor %}
                                           </select>
                                         </div>
@@ -406,27 +435,30 @@
                                           <select id="ing_09" name="ing_09" class="form-control">
                                             <option value="" disabled selected>Choose the right ingredient...</option>
                                             {% for ingredients in ingredients9 %}
-                                            <option>{{ingredients.ingredients_name}}</option>
+                                                {% if ingredients.ingredients_name == prescription.ing_09 %}
+                                                <option value="{{ingredients.ingredients_name}}" selected>{{ingredients.ingredients_name}}</option>
+                                                {% else %}
+                                                <option value="{{ingredients.ingredients_name}}">{{ingredients.ingredients_name}}</option>
+                                                {% endif %}
                                             {% endfor %}
                                           </select>
                                         </div>
-
-
-
-
-
                                         <div class="form-group col-md-1">
                                           <h5 class="form-control">10.</h5>
                                         </div>
                                         <div class="form-group col-md-2">
                                           <input type="text" class="form-control" id="pcs_10" name="pcs_10"
-                                                 placeholder="Quantity">
+                                                 placeholder="Quantity" value="{{prescription.pcs_01}}">
                                         </div>
                                         <div class="form-group col-md-3">
                                           <select id="uom_10" name="uom_10" class="form-control">
                                             <option value="" disabled selected>Choose Unit of measure.</option>
                                             {% for uom in uom10 %}
-                                            <option>{{uom.uom_name}}</option>
+                                                {% if uom.uom_name == prescription.uom_10 %}
+                                                <option value="{{uom.uom_name}}" selected>{{uom.uom_name}}</option>
+                                                {% else %}
+                                                <option value="{{uom.uom_name}}">{{uom.uom_name}}</option>
+                                                {% endif %}
                                             {% endfor %}
                                           </select>
                                         </div>
@@ -434,43 +466,29 @@
                                           <select id="ing_10" name="ing_10" class="form-control">
                                             <option value="" disabled selected>Choose the right ingredient...</option>
                                             {% for ingredients in ingredients10 %}
-                                            <option>{{ingredients.ingredients_name}}</option>
+                                                {% if ingredients.ingredients_name == prescription.ing_10 %}
+                                                <option value="{{ingredients.ingredients_name}}" selected>{{ingredients.ingredients_name}}</option>
+                                                {% else %}
+                                                <option value="{{ingredients.ingredients_name}}">{{ingredients.ingredients_name}}</option>
+                                                {% endif %}
                                             {% endfor %}
                                           </select>
                                         </div>
-
-
-
-
-
-                                        <div class="form-group col-md-2">
-                                          <input type="text" class="form-control" id="pcs_10" name="pcs_10"
-                                                 placeholder="Quantity">
-                                        </div>
-
-
-
-
                                         <label for="prescription_pic01" class="col-md-12">Links</label>
                                         <div class="form-group col-md-12">
                                           <input type="text" class="form-control"
                                                  id="prescription_pic01" name="prescription_pic01"
-                                               placeholder="Please add a link to the photo.  (img. format)">
+                                               placeholder="Please add a link to the photo.  (img. format)"
+                                               value="{{prescription.prescription_pic01}}">
                                         </div>
                                         <div class="form-group col-md-12">
                                         <input type="text" class="form-control"
                                                 id="prescription_pic02" name="prescription_pic02"
-                                               placeholder="Please add a link to the photo.  (img. format)">
+                                               placeholder="Please add a link to the photo.  (img. format)"
+                                               value="{{prescription.prescription_pic02}}">
                                         </div>
-
-
-
-
-
-
-
                                 <button type="submit" name="action" class="btn btn-primary">
-                                    <i class="fas fa-folder-plus"></i> Submit</button>
+                                    <i class="fas fa-folder-plus"></i>Update</button>
                             </form>
                         </div>
                     </div>
