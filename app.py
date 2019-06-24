@@ -121,11 +121,6 @@ def update_prescription(prescription_id):
     prescription = mongo.db.prescription
     prescription.update({'_id': ObjectId(prescription_id)},
     {
-        'task_name':request.form.get('task_name'),
-        'category_name':request.form.get('category_name'),
-        'task_description': request.form.get('task_description'),
-        'due_date': request.form.get('due_date'),
-        'is_urgent':request.form.get('is_urgent'),
         'disp_name':request.form.get('disp_name'),
         'origin_country':request.form.get('origin_country'),
         'prescription_name':request.form.get('prescription_name'),
@@ -178,9 +173,58 @@ def update_prescription(prescription_id):
         'prescription_pic02': request.form.get('prescription_pic02')
     })
 
+    mongo.db.prescription.update_many({'disp_name': None}, {'$set': {'disp_name': ''}})
+    mongo.db.prescription.update_many({'origin_country': None}, {'$set': {'origin_country': ''}})
+    mongo.db.prescription.update_many({'prescription_name': None}, {'$set': {'prescription_name': ''}})
+    mongo.db.prescription.update_many({'prep_time': None}, {'$set': {'prep_time': ''}})
+    mongo.db.prescription.update_many({'cook_time': None}, {'$set': {'cook_time': ''}})
+    mongo.db.prescription.update_many({'allergen_name': None}, {'$set': {'allergen_name': ''}})
+    mongo.db.prescription.update_many({'alle_01': None}, {'$set': {'alle_01': ''}})
+    mongo.db.prescription.update_many({'alle_02': None}, {'$set': {'alle_02': ''}})
+    mongo.db.prescription.update_many({'alle_03': None}, {'$set': {'alle_03': ''}})
+    mongo.db.prescription.update_many({'alle_04': None}, {'$set': {'alle_04': ''}})
+    mongo.db.prescription.update_many({'step_01a': None}, {'$set': {'step_01a': ''}})
+    mongo.db.prescription.update_many({'step_01b': None}, {'$set': {'step_02a': ''}})
+    mongo.db.prescription.update_many({'step_02a': None}, {'$set': {'step_02a': ''}})
+    mongo.db.prescription.update_many({'step_02b': None}, {'$set': {'step_02b': ''}})
+    mongo.db.prescription.update_many({'step_03a': None}, {'$set': {'step_03a': ''}})
+    mongo.db.prescription.update_many({'step_03b': None}, {'$set': {'step_03b': ''}})
+    mongo.db.prescription.update_many({'step_04a': None}, {'$set': {'step_04a': ''}})
+    mongo.db.prescription.update_many({'step_04b': None}, {'$set': {'step_04b': ''}})
+    mongo.db.prescription.update_many({'pcs_01': None}, {'$set': {'pcs_01': ''}})
+    mongo.db.prescription.update_many({'pcs_02': None}, {'$set': {'pcs_02': ''}})
+    mongo.db.prescription.update_many({'pcs_03': None}, {'$set': {'pcs_03': ''}})
+    mongo.db.prescription.update_many({'pcs_04': None}, {'$set': {'pcs_04': ''}})
+    mongo.db.prescription.update_many({'pcs_05': None}, {'$set': {'pcs_05': ''}})
+    mongo.db.prescription.update_many({'pcs_06': None}, {'$set': {'pcs_06': ''}})
+    mongo.db.prescription.update_many({'pcs_07': None}, {'$set': {'pcs_07': ''}})
+    mongo.db.prescription.update_many({'pcs_08': None}, {'$set': {'pcs_08': ''}})
+    mongo.db.prescription.update_many({'pcs_09': None}, {'$set': {'pcs_09': ''}})
+    mongo.db.prescription.update_many({'pcs_10': None}, {'$set': {'pcs_10': ''}})
+    mongo.db.prescription.update_many({'uom_01': None}, {'$set': {'uom_01': ''}})
+    mongo.db.prescription.update_many({'uom_02': None}, {'$set': {'uom_02': ''}})
+    mongo.db.prescription.update_many({'uom_03': None}, {'$set': {'uom_03': ''}})
+    mongo.db.prescription.update_many({'uom_04': None}, {'$set': {'uom_04': ''}})
+    mongo.db.prescription.update_many({'uom_05': None}, {'$set': {'uom_05': ''}})
+    mongo.db.prescription.update_many({'uom_06': None}, {'$set': {'uom_06': ''}})
+    mongo.db.prescription.update_many({'uom_07': None}, {'$set': {'uom_07': ''}})
+    mongo.db.prescription.update_many({'uom_08': None}, {'$set': {'uom_08': ''}})
+    mongo.db.prescription.update_many({'uom_09': None}, {'$set': {'uom_09': ''}})
+    mongo.db.prescription.update_many({'uom_10': None}, {'$set': {'uom_10': ''}})
+    mongo.db.prescription.update_many({'ing_01': None}, {'$set': {'ing_01': ''}})
+    mongo.db.prescription.update_many({'ing_02': None}, {'$set': {'ing_02': ''}})
+    mongo.db.prescription.update_many({'ing_03': None}, {'$set': {'ing_03': ''}})
+    mongo.db.prescription.update_many({'ing_04': None}, {'$set': {'ing_04': ''}})
+    mongo.db.prescription.update_many({'ing_05': None}, {'$set': {'ing_05': ''}})
+    mongo.db.prescription.update_many({'ing_06': None}, {'$set': {'ing_06': ''}})
+    mongo.db.prescription.update_many({'ing_07': None}, {'$set': {'ing_07': ''}})
+    mongo.db.prescription.update_many({'ing_08': None}, {'$set': {'ing_08': ''}})
+    mongo.db.prescription.update_many({'ing_09': None}, {'$set': {'ing_09': ''}})
+    mongo.db.prescription.update_many({'ing_10': None}, {'$set': {'ing_10': ''}})
+    mongo.db.prescription.update_many({'prescription_pic01': None}, {'$set': {'prescription_pic01': ''}})
+    mongo.db.prescription.update_many({'prescription_pic02': None}, {'$set': {'prescription_pic02': ''}})
+
     return redirect(url_for('get_prescription'))
-
-
 
 @app.route('/add_prescription')
 def add_prescription():
