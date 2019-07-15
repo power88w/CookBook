@@ -25,8 +25,8 @@
       if (selectedEventType == "all") {
         $('.containero').removeClass('hidden');
       } else {
-        $('.containero').removeClass('hidden');
-        $('.containero[data-eventtype3="' + selectedEventType + '"]').addClass('hidden');
+        $('.containero').addClass('hidden');
+        $('.containero[data-eventtype3="' + selectedEventType + '"]').removeClass('hidden');
       }
     });
 

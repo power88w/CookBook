@@ -1,0 +1,60 @@
+{% extends 'base.html'%}
+{% block content %}
+<div class="row">
+    <ul class="collapsible" data-collapsible="accordion">
+</div>
+       <!-- Receipe Content Area -->
+        <div class="collapsible-header receipe-content-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-8">
+                       <div class="col-12">
+                    <div class="elements-title mb-80">
+                        <h2>Milestone</h2>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="delicious-cool-facts-area">
+                        <div class="row">
+                            <!-- Single Cool Fact -->
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <div class="single-cool-fact">
+                                    <img src="../static/img/core-img/salad.png">
+                                    <h3><span class="counter">{{ test }}</span></h3>
+                                    <h6>Amazing receipies </h6>
+                                </div>
+                            </div>
+                            <!-- Single Cool Fact -->
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <div class="single-cool-fact">
+                                    <img src="../static/img/core-img/hamburger.png" alt="">
+                                    <h3><span class="counter">25</span></h3>
+                                    <h6>Burger receipies</h6>
+                                </div>
+                            </div>
+                            <!-- Single Cool Fact -->
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <div class="single-cool-fact">
+                                    <img src="../static/img/core-img/rib.png" alt="">
+                                    <h3><span class="counter">471</span></h3>
+                                    <h6>Meat receipies</h6>
+                                </div>
+                            </div>
+                            <!-- Single Cool Fact -->
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <div class="single-cool-fact">
+                                    <img src="../static/img/core-img/pancake.png" alt="">
+                                    <h3><span class="counter">326</span></h3>
+                                    <h6>Desert receipies</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ul>
+</div>
+{% endblock %}

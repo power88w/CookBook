@@ -1,58 +1,52 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" type="text/css">
-<script src="../static/js/jquery/jquery-2.2.4.min.js"></script>
-
-{% extends 'base.html' %} {% block content %}
-
+{% extends 'base.html' %}
+{% block content %}
 
 <div class="receipe-post-area section-padding-80">
 <!-- Receipe Post Search -->
-        <div class="receipe-post-search mb-80">
-            <div class="container">
-                <form>
-                    <div class="row">
-                        <div class="col-12 col-lg-3">
-                            <select class="event-type-select">
-                                <option value="all">Choose Author.</option>
-                                {% for prescription in prescription1 %}
-                                <option value="{{prescription.disp_name}}">{{prescription.disp_name}}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
-                        <div class="col-12 col-lg-3">
-                            <select class="event-type-select2">
-                                <option value="all">Choose Main Ingredients.</option>
-                                {% for prescription in prescription2 %}
-                                <option value="{{prescription.ing_01}}">{{prescription.ing_01}}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
-                        <div class="col-12 col-lg-3">
-                            <select class="event-type-select3">
-                                <option value="all">Not Contain.</option>
-                                {% for allergen in allergen %}
-                                <option value="{{allergen.allergen_name}}">{{allergen.allergen_name}}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
-                        <div class="col-12 col-lg-3">
-                            <select class="event-type-select4">
-                                <option value="all">Choose Origin Country.</option>
-                                {% for prescription in prescription4 %}
-                                <option value="{{prescription.origin_country}}">{{prescription.origin_country}}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
+    <div class="receipe-post-search mb-80">
+        <div class="container">
+            <form>
+                <div class="row">
+                    <div class="col-12 col-lg-3">
+                        <select class="event-type-select">
+                            <option value="all">Choose Author.</option>
+                            {% for prescription in prescription1 %}
+                            <option value="{{prescription.disp_name}}">{{prescription.disp_name}}</option>
+                            {% endfor %}
+                        </select>
                     </div>
-                </form>
-            </div>
+                    <div class="col-12 col-lg-3">
+                        <select class="event-type-select2">
+                            <option value="all">Choose Main Ingredients.</option>
+                            {% for prescription in prescription2 %}
+                            <option value="{{prescription.ing_01}}">{{prescription.ing_01}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-12 col-lg-3">
+                        <select class="event-type-select3">
+                            <option value="all">Choose Allergen.</option>
+                            {% for allergen in allergen %}
+                            <option value="{{allergen.allergen_name}}">{{allergen.allergen_name}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-12 col-lg-3">
+                        <select class="event-type-select4">
+                            <option value="all">Choose Origin Country.</option>
+                            {% for prescription in prescription4 %}
+                            <option value="{{prescription.origin_country}}">{{prescription.origin_country}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+            </form>
         </div>
+    </div>
 </div>
-
-
 {% for prescription in prescription5 %}
 <div class="containero" data-eventtype="{{prescription.disp_name}}" data-eventtype2="{{prescription.ing_01}}"
      data-eventtype3="{{prescription.alle_01}}" data-eventtype4="{{prescription.origin_country}}">
-<!---Zmienne--->
         <!-- Receipe Slider -->
         <div class="container">
             <div class="row">
@@ -64,9 +58,7 @@
                 </div>
             </div>
         </div>
-
 <!-- Receipe Content Area -->
-
         <div class="receipe-content-area">
             <div class="container">
                 <div class="row">
@@ -84,10 +76,10 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="col-12 col-md-4">
                         <div class="receipe-ratings text-right my-5">
                             <div class="ratings">
+                                <h6>Author: {{prescription.disp_name}}</h6>
                                 <i class="fa fa-star" aria-hidden="true"></i>
                                 <i class="fa fa-star" aria-hidden="true"></i>
                                 <i class="fa fa-star" aria-hidden="true"></i>
@@ -98,7 +90,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="col-12 col-lg-8">
                         <!-- Single Preparation Step -->
@@ -122,59 +113,47 @@
                             <p>{{prescription.step_04b}} </p>
                         </div>
                     </div>
-
-
                     <!-- Ingredients -->
                     <div class="col-12 col-lg-4">
                         <div class="ingredients">
                             <h4>Ingredients</h4>
-
                             <!-- Custom Checkbox -->
                             <div>
                                 <h6>{{prescription.pcs_01}} {{prescription.uom_01}} {{prescription.ing_01}}</h6>
                             </div>
-
                             <!-- Custom Checkbox -->
                             <div>
                                 <h6>{{prescription.pcs_02}} {{prescription.uom_02}} {{prescription.ing_02}}</h6>
                             </div>
-
                             <!-- Custom Checkbox -->
                             <div>
                                 <h6>{{prescription.pcs_03}} {{prescription.uom_03}} {{prescription.ing_03}}</h6>
                             </div>
-
                             <!-- Custom Checkbox -->
                             <div>
                                 <h6>{{prescription.pcs_04}} {{prescription.uom_04}} {{prescription.ing_04}}</h6>
                             </div>
-
                             <!-- Custom Checkbox -->
                             <div>
                                 <h6>{{prescription.pcs_05}} {{prescription.uom_05}} {{prescription.ing_05}}</h6>
                             </div>
-
                             <!-- Custom Checkbox -->
                             <div>
                                 <h6>{{prescription.pcs_06}} {{prescription.uom_06}} {{prescription.ing_06}}</h6>
                             </div>
-
                             <!-- Custom Checkbox -->
                             <div>
                                 <h6>{{prescription.pcs_07}} {{prescription.uom_07}} {{prescription.ing_07}}</h6>
                             </div>
-
                             <!-- Custom Checkbox -->
                             <div>
                                 <h6>{{prescription.pcs_08}} {{prescription.uom_08}} {{prescription.ing_08}}</h6>
                             </div>
-
                             <!-- Custom Checkbox -->
                             <div>
                                 <h6>{{prescription.pcs_09}} {{prescription.uom_09}} {{prescription.ing_09}}</h6>
                             </div>
-
-                                                        <!-- Custom Checkbox -->
+                            <!-- Custom Checkbox -->
                             <div>
                                 <h6>{{prescription.pcs_10}} {{prescription.uom_10}} {{prescription.ing_10}}</h6>
                             </div>
@@ -187,4 +166,3 @@
 <!---Zmienne koniec--->
 {% endfor %}
 {% endblock %}
-

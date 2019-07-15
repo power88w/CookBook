@@ -1,13 +1,5 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" type="text/css">
-
-
-
 {% extends 'base.html'%}
-
 {% block content %}
-<h3></h3>
-
-
 <div class="row">
     <ul class="collapsible" data-collapsible="accordion">
 </div>
@@ -17,24 +9,23 @@
                 <div class="row">
                     <div class="col-12 col-md-8">
                         <div class="collapse show receipe-headline my-5">
-                                <form action="{{ url_for('update_allergen', allergen_id=allergen._id) }}" method="POST">
-                                      <div class="form-group">
-                                        <h3>Add Category</h3>
-                                            <input type="text" name="allergen_name" class="validate input-field form-control"
-                                                id="allergen_name" class="validate" placeholder="Allergen Name"
-                                                value="{{allergen.allergen_name}}">
-                                      </div>
-                                      <button type="submit" name="action" class="btn btn-primary">
-                                          <i class="fas fa-folder-plus"></i> Update</button>
-                                      <button href="{{ url_for('get_allergen') }}" class="btn btn-danger">
-                                          <i class="far fa-times-circle"></i> Cancel</button>
-                                </form>
+                            <form action="{{ url_for('update_allergen', allergen_id=allergen._id) }}" method="POST">
+                                <div class="form-group">
+                                    <h3>Add Category</h3>
+                                    <input type="text" name="allergen_name" class="validate input-field form-control"
+                                           id="allergen_name" class="validate" placeholder="Allergen Name"
+                                           value="{{allergen.allergen_name}}">
+                                </div>
+                                <button type="submit" name="action" class="btn btn-primary">
+                                    <i class="fas fa-folder-plus"></i> Update</button>
+                                <button href="{{ url_for('get_allergen') }}" class="btn btn-danger">
+                                    <i class="far fa-times-circle"></i> Cancel</button>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </ul>
-</div>
 {% endblock %}
 

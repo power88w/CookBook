@@ -1,38 +1,35 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" type="text/css">
-
-{% extends 'base.html' %} {% block content %}
-
+{% extends 'base.html' %}
+{% block content %}
 <div class="row">
     <ul class="collapsible" data-collapsible="accordion">
 </div>
-       <!-- Receipe Content Area -->
-        <div class="collapsible-header receipe-content-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-md-8">
-                        <div class="collapse show receipe-headline my-5">
-                          <h3>Ingredients</h3>
-                          {% for ingredients in ingredients %}
-                            <div class="receipe-duration">
-                                <h4>
-                                    <a href= "{{url_for('delete_ingredients', ingredients_id =ingredients._id)}}"
-                                       class="waves-effect waves-light btn btn-danger">Del</a>
-                                    <a href= "{{url_for('edit_ingredients', ingredients_id =ingredients._id)}}"
-                                       class="waves-effect waves-light btn btn-primary">Edit</a>
-                                    {{ingredients.ingredients_name}}
-                                </h4>
-                            </div>
-                          {% endfor %}
-                        </div>
-                        <div class="row">
-                            <a href="{{url_for('new_ingredients')}}" class="waves-effect waves-light btn btn-success">
-                            <i class="fas fa-caret-down"></i> Add Category</a>
-                        </div>
+<!-- Receipe Content Area -->
+<div class="collapsible-header receipe-content-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-8">
+                <div class="collapse show receipe-headline my-5">
+                    <h3>Ingredients</h3>
+                    {% for ingredients in ingredients %}
+                    <div class="receipe-duration">
+                        <h4>
+                            <a href= "{{url_for('delete_ingredients', ingredients_id =ingredients._id)}}"
+                               class="waves-effect waves-light btn btn-danger">Del</a>
+                            <a href= "{{url_for('edit_ingredients', ingredients_id =ingredients._id)}}"
+                               class="waves-effect waves-light btn btn-primary">Edit</a>
+                            {{ingredients.ingredients_name}}
+                        </h4>
                     </div>
+                    {% endfor %}
+                </div>
+                <div class="row">
+                    <a href="{{url_for('new_ingredients')}}" class="waves-effect waves-light btn btn-success">
+                        <i class="fas fa-caret-down"></i> Add Category</a>
                 </div>
             </div>
         </div>
-    </ul>
+    </div>
 </div>
+</ul>
 {% endblock %}
 

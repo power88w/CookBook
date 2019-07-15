@@ -5,17 +5,14 @@ from bson.objectid import ObjectId
 
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'CookBook'
-app.config["MONGO_URI"] = 'mongodb+srv://root:zgadnij12345678910@myfirstcluster-gg70b.mongodb.net/CookBook?retryWrites=true&w=majority'
+app.config["MONGO_URI"] = 'mongodb+srv://root:zgadnij88w12345@myfirstcluster-gg70b.mongodb.net/CookBook?retryWrites=true&w=majority'
 
 mongo = PyMongo(app)
 
-#Allergeny
 @app.route('/get_allergen')
 def get_allergen():
     return render_template('allergen.html',
                             allergen=mongo.db.allergen.find().sort('allergen_name', 1))
-
-
 
 @app.route('/delete_allergen/<allergen_id>')
 def delete_allergen(allergen_id):
@@ -42,11 +39,19 @@ def insert_allergen():
     allergen.insert_one(allergen_doc)
     return redirect(url_for('get_allergen'))
 
+@app.route('/new_elements')
+def new_elements():
+    return render_template('elements.html')
+def new_elements2():
+    prescription = mongo.db.prescription.find()
+    test = 0
+    for prescription in prescription:
+        test += 1
+    return render_template(test)
+
 @app.route('/new_allergen')
 def new_allergen():
     return render_template('addallergen.html')
-
-#Koniec Allergenów
 
 @app.route('/')
 @app.route('/get_prescription')
@@ -60,20 +65,15 @@ def get_prescription():
                            prescription6=mongo.db.prescription.find().sort('prescription_name', 1),
                            allergen=mongo.db.allergen.find().sort('allergen_name', 1))
 
-
-
-
 @app.route('/get_prescriptionlist')
 def get_prescriptionlist():
     return render_template('prescriptionlist.html',
                             prescriptionlist=mongo.db.prescription.find().sort('prescription_name', 1))
 
-
 @app.route('/delete_prescription/<prescription_id>')
 def delete_prescription(prescription_id):
     mongo.db.prescription.remove({'_id': ObjectId(prescription_id)})
     return redirect(url_for('get_prescriptionlist'))
-
 
 @app.route('/edit_prescription/<prescription_id>')
 def edit_prescription(prescription_id):
@@ -113,15 +113,11 @@ def edit_prescription(prescription_id):
                            uom1=all_uom1, uom2=all_uom2, uom3=all_uom3, uom4=all_uom4, uom5=all_uom5, uom6=all_uom6,
                            uom7=all_uom7, uom8=all_uom8, uom9=all_uom9, uom10=all_uom10)
 
-
-
-
 @app.route('/update_prescription/<prescription_id>', methods=["POST"])
 def update_prescription(prescription_id):
     prescription = mongo.db.prescription
     prescription.update({'_id': ObjectId(prescription_id)},
-    {
-        'disp_name':request.form.get('disp_name'),
+    {   'disp_name':request.form.get('disp_name'),
         'origin_country':request.form.get('origin_country'),
         'prescription_name':request.form.get('prescription_name'),
         'prep_time':request.form.get('prep_time'),
@@ -223,9 +219,7 @@ def update_prescription(prescription_id):
     mongo.db.prescription.update_many({'ing_10': None}, {'$set': {'ing_10': ''}})
     mongo.db.prescription.update_many({'prescription_pic01': None}, {'$set': {'prescription_pic01': ''}})
     mongo.db.prescription.update_many({'prescription_pic02': None}, {'$set': {'prescription_pic02': ''}})
-
     return redirect(url_for('get_prescription'))
-
 
 @app.route('/add_prescription')
 def add_prescription():
@@ -256,19 +250,12 @@ def add_prescription():
                            ingredients9=mongo.db.ingredients.find().sort('ingredients_name', 1),
                            ingredients10=mongo.db.ingredients.find().sort('ingredients_name', 1))
 
-
 @app.route('/insert_prescription', methods=['POST'])
 def insert_prescription():
     prescription =  mongo.db.prescription
     prescription.insert_one(request.form.to_dict())
+    mongo.db.prescription.update_many({'like': None}, {'$set': {'like': (0)}})
     return redirect(url_for('get_prescription'))
-
-
-
-
-
-
-#UOM
 
 @app.route('/get_uom')
 def get_uom():
@@ -293,8 +280,6 @@ def update_uom(uom_id):
         {'uom_name': request.form.get('uom_name')})
     return redirect(url_for('get_uom'))
 
-
-
 @app.route('/insert_uom', methods=['POST'])
 def insert_uom():
     uom = mongo.db.uom
@@ -305,13 +290,6 @@ def insert_uom():
 @app.route('/new_uom')
 def new_uom():
     return render_template('adduom.html')
-
-
-# Finish UOM
-
-
-# Ingredients
-
 
 @app.route('/get_ingredients')
 def get_ingredients():
@@ -363,21 +341,11 @@ def insert_ingredients():
     ingredients.remove({'ingredients_name': ""})
     return redirect(url_for('get_ingredients'))
 
-
 @app.route('/new_ingredients')
 def new_ingredients():
     return render_template('addingredients.html')
-
-
-#Koniec Ingredients
-
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=(os.environ.get('PORT')),
             debug=True)
-
-
-
-
-
