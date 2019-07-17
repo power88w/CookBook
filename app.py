@@ -345,6 +345,7 @@ def insert_ingredients():
 def new_ingredients():
     return render_template('addingredients.html')
 
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=(os.environ.get('PORT')),

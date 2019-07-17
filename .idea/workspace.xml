@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77d1c1de-1306-4e08-bae9-a0c3713611ff" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/mobile.JPG" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/img/recipe.JPG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/uom.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/uom.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,45 +21,36 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/CookBook$app.coverage" NAME="app Coverage Results" MODIFIED="1563238009379" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CookBook$app.coverage" NAME="app Coverage Results" MODIFIED="1563327041928" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="176">
-                <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+              <first_editor relative-caret-position="336">
+                <caret line="147" column="1" selection-start-line="147" selection-start-column="1" selection-end-line="147" selection-end-column="1" />
               </first_editor>
               <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+            <state relative-caret-position="4906">
+              <caret line="223" selection-start-line="223" selection-end-line="223" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/editingredients.html">
+        <entry file="file://$PROJECT_DIR$/static/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="27" column="9" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/editprescription.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10758">
-              <caret line="489" column="6" selection-start-line="489" selection-start-column="6" selection-end-line="489" selection-end-column="6" />
+            <state relative-caret-position="308">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
@@ -106,8 +103,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/uom.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+            <state relative-caret-position="88">
+              <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="7568">
+              <caret line="347" selection-start-line="347" selection-end-line="347" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -168,10 +177,8 @@
         <option value="$PROJECT_DIR$/templates/testdropa.html" />
         <option value="$PROJECT_DIR$/templates/noty.html" />
         <option value="$PROJECT_DIR$/static/css/classy-nav.min.css" />
-        <option value="$PROJECT_DIR$/static/style.css" />
         <option value="$PROJECT_DIR$/static/js/active.js" />
         <option value="$PROJECT_DIR$/appycopy2.py" />
-        <option value="$PROJECT_DIR$/app.py" />
         <option value="$PROJECT_DIR$/static/css/animate.css" />
         <option value="$PROJECT_DIR$/static/css/owl.carousel.min.css" />
         <option value="$PROJECT_DIR$/static/js/bootstrap/popper.min.js" />
@@ -188,16 +195,18 @@
         <option value="$PROJECT_DIR$/templates/elements.html" />
         <option value="$PROJECT_DIR$/templates/prescription.html" />
         <option value="$PROJECT_DIR$/templates/prescriptionlist.html" />
-        <option value="$PROJECT_DIR$/templates/uom.html" />
         <option value="$PROJECT_DIR$/templates/ingredients.html" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/static/style.css" />
+        <option value="$PROJECT_DIR$/templates/uom.html" />
+        <option value="$PROJECT_DIR$/app.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2605" />
-    <option name="y" value="1" />
+    <option name="x" value="2563" />
+    <option name="y" value="169" />
     <option name="width" value="2576" />
     <option name="height" value="1407" />
   </component>
@@ -214,6 +223,22 @@
             <path>
               <item name="CookBook" type="b2602c69:ProjectViewProjectNode" />
               <item name="CookBook" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CookBook" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CookBook" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CookBook" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CookBook" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CookBook" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CookBook" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CookBook" type="b2602c69:ProjectViewProjectNode" />
@@ -303,8 +328,6 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.app" />
-        <item itemvalue="JavaScript Debug.elements.html (1)" />
-        <item itemvalue="JavaScript Debug.elements.html" />
       </list>
     </recent_temporary>
   </component>
@@ -349,11 +372,16 @@
       <workItem from="1563135478826" duration="1416000" />
       <workItem from="1563137362101" duration="13158000" />
       <workItem from="1563216756955" duration="1621000" />
+      <workItem from="1563237997713" duration="2424000" />
+      <workItem from="1563314688933" duration="2636000" />
+      <workItem from="1563321725590" duration="42000" />
+      <workItem from="1563323183603" duration="17000" />
+      <workItem from="1563326182938" duration="1260000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="228338000" />
+    <option name="totallyTimeSpent" value="234717000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -368,20 +396,20 @@
     <frame x="2552" y="-25" width="2576" height="1416" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22774245" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.34300476" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="DB Browser" order="3" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32969603" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.28760716" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.28682774" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32969603" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32969603" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.3187841" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49960285" visible="true" weight="0.5190959" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50039715" side_tool="true" weight="0.51950353" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.20043337" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="DB Execution Console" order="12" />
@@ -424,9 +452,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/static/img/bg-img/breadcumb5.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/img/bg-img/insta1.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -560,13 +585,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="757">
-          <caret line="223" lean-forward="true" selection-start-line="223" selection-end-line="223" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/editallergen.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="638">
@@ -577,15 +595,6 @@
     <entry file="file://$PROJECT_DIR$/templates/note.py" />
     <entry file="file://$PROJECT_DIR$/templates/noty.html" />
     <entry file="file://$PROJECT_DIR$/templates/testdropa.html" />
-    <entry file="file://$PROJECT_DIR$/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/editingredients.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
@@ -597,6 +606,37 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10758">
           <caret line="489" column="6" selection-start-line="489" selection-start-column="6" selection-end-line="489" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="336">
+            <caret line="147" column="1" selection-start-line="147" selection-start-column="1" selection-end-line="147" selection-end-column="1" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4906">
+          <caret line="223" selection-start-line="223" selection-end-line="223" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
@@ -637,25 +677,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/uom.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+        <state relative-caret-position="88">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="176">
-            <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        <state relative-caret-position="7568">
+          <caret line="347" selection-start-line="347" selection-end-line="347" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
