@@ -8,7 +8,7 @@
 
 ### Mobile
 
-<img src="https://github.com/power88w/CookBook/blob/master/static/img/overview.JPG?raw=true"/> <br>
+<img src="https://github.com/power88w/CookBook/blob/master/static/img/mobile.JPG?raw=true"/> <br>
 
 ## User Stories
 
@@ -51,7 +51,7 @@ As a user:
 
 
 
-<img src="https://github.com/power88w/CookBook/blob/master/static/img/overview.JPG?raw=true" width="400" />
+<img src="https://github.com/power88w/CookBook/blob/master/static/img/recipe.JPG?raw=true" width="400" />
 
 ### Features left to be implement in future development:
 
