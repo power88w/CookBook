@@ -33,7 +33,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
+            <state relative-caret-position="-440">
               <caret line="45" column="14" lean-forward="true" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="14" />
             </state>
           </provider>
@@ -350,12 +350,12 @@
       <workItem from="1563321725590" duration="42000" />
       <workItem from="1563323183603" duration="17000" />
       <workItem from="1563326182938" duration="1260000" />
-      <workItem from="1563413760551" duration="857000" />
+      <workItem from="1563413760551" duration="1252000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="235574000" />
+    <option name="totallyTimeSpent" value="235969000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -368,7 +368,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="2552" y="-25" width="2576" height="1416" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.34300476" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -376,13 +375,13 @@
       <window_info id="DB Browser" order="3" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32969603" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.28682774" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.28682774" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32969603" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32969603" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49960285" weight="0.51831645" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49960285" visible="true" weight="0.51831645" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50039715" side_tool="true" weight="0.51950353" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.20043337" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
@@ -661,7 +660,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
+        <state relative-caret-position="-440">
           <caret line="45" column="14" lean-forward="true" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="14" />
         </state>
       </provider>
