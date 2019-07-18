@@ -4,9 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/app.py" description="app = Flask(__name__)" line="5" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77d1c1de-1306-4e08-bae9-a0c3713611ff" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-    </list>
+    <list default="true" id="77d1c1de-1306-4e08-bae9-a0c3713611ff" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,10 +196,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2563" />
-    <option name="y" value="169" />
+    <option name="x" value="2552" />
+    <option name="y" value="-25" />
     <option name="width" value="2576" />
-    <option name="height" value="1407" />
+    <option name="height" value="1416" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -217,11 +215,6 @@
               <item name="CookBook" type="b2602c69:ProjectViewProjectNode" />
               <item name="CookBook" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="CookBook" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CookBook" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -231,7 +224,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Mini project data centric" />
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
   </component>
   <component name="ReadonlyStatusHandler">
@@ -350,12 +343,12 @@
       <workItem from="1563321725590" duration="42000" />
       <workItem from="1563323183603" duration="17000" />
       <workItem from="1563326182938" duration="1260000" />
-      <workItem from="1563413760551" duration="1252000" />
+      <workItem from="1563413760551" duration="2206000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="235969000" />
+    <option name="totallyTimeSpent" value="236923000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
