@@ -4,7 +4,10 @@
     <bookmark url="file://$PROJECT_DIR$/app.py" description="app = Flask(__name__)" line="5" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="77d1c1de-1306-4e08-bae9-a0c3713611ff" name="Default Changelist" comment="" />
+    <list default="true" id="77d1c1de-1306-4e08-bae9-a0c3713611ff" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +31,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-440">
@@ -37,11 +40,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/style.css">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/requirements.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="483">
+              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
             </state>
           </provider>
         </entry>
@@ -192,6 +195,7 @@
         <option value="$PROJECT_DIR$/app.py" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/templates/base.html" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
       </list>
     </option>
   </component>
@@ -231,17 +235,18 @@
     <option name="SHOW_DIALOG" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\power\Dropbox (Osobiste)\Szkola\CookBook3\CookBook" />
+      <recent name="C:\Users\power\Dropbox (Osobiste)\Szkola\CookBook\templates" />
+      <recent name="C:\Users\power\Dropbox (Osobiste)\Szkola\CookBook\static\css" />
+      <recent name="C:\Users\Marek.Kulpa\Dropbox\Szkola\CookBook\templates" />
+      <recent name="C:\Users\Marek.Kulpa\Dropbox\Szkola\CookBook\templates\.sass-cache" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\power\Dropbox (Osobiste)\Szkola\CookBook\static" />
       <recent name="C:\Users\power\Dropbox (Osobiste)\Szkola\CookBook\templates\style" />
       <recent name="C:\Users\Marek.Kulpa\Dropbox\Szkola\CookBook\templates" />
       <recent name="C:\Users\Marek.Kulpa\Dropbox\Szkola\CookBook\assets" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\power\Dropbox (Osobiste)\Szkola\CookBook\templates" />
-      <recent name="C:\Users\power\Dropbox (Osobiste)\Szkola\CookBook\static\css" />
-      <recent name="C:\Users\Marek.Kulpa\Dropbox\Szkola\CookBook\templates" />
-      <recent name="C:\Users\Marek.Kulpa\Dropbox\Szkola\CookBook\templates\.sass-cache" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -343,12 +348,12 @@
       <workItem from="1563321725590" duration="42000" />
       <workItem from="1563323183603" duration="17000" />
       <workItem from="1563326182938" duration="1260000" />
-      <workItem from="1563413760551" duration="2206000" />
+      <workItem from="1563413760551" duration="2971000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="236923000" />
+    <option name="totallyTimeSpent" value="237688000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -361,8 +366,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="2552" y="-25" width="2576" height="1416" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.34300476" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.34300476" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="DB Browser" order="3" />
@@ -374,7 +380,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32969603" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32969603" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49960285" visible="true" weight="0.51831645" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49960285" visible="true" weight="0.51831645" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50039715" side_tool="true" weight="0.51950353" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.20043337" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
@@ -418,9 +424,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/static/img/bg-img/insta1.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/img/bg-img/insta2.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -655,6 +658,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-440">
           <caret line="45" column="14" lean-forward="true" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
         </state>
       </provider>
     </entry>
