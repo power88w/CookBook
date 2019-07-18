@@ -48,6 +48,17 @@ As a user:
 
 ## Features 
 
+- The page contains a drop down menu.
+- The site has the ability to filter content:
+    - Author.
+    - Main component .
+    - Allergens.
+    - Country of origin.
+- Pictures of dishes that have been moved for a few seconds.
+- The page contains individual steps in the recipe.
+- Recipes can be added, edited, and deleted.
+- Allergens can be added, edited, or deleted.
+- Units can be added, edited, or deleted.
 
 
 
@@ -66,7 +77,7 @@ As a user:
 Example recipe:
 
 ```
-	{
+{
 	{"_id":{"$oid":"5d110da7c98ec9cd0942c031"},"disp_name":"Marek",
 	"origin_country":"China",
 	"prescription_name":" Pulled Hoisin Chicken & Sesame Noodles",
@@ -147,6 +158,5 @@ git clone https://github.com/power88w/CookBook.git
 
 Recipes and pictures updated from:
 * https://www.gousto.co.uk
-
 
 
