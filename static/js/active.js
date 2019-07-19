@@ -26,7 +26,10 @@
         $('.containero').removeClass('hidden');
       } else {
         $('.containero').addClass('hidden');
+        $('.containero[data-eventtype5="' + selectedEventType + '"]').removeClass('hidden');
         $('.containero[data-eventtype3="' + selectedEventType + '"]').removeClass('hidden');
+        $('.containero[data-eventtype6="' + selectedEventType + '"]').removeClass('hidden');
+        $('.containero[data-eventtype7="' + selectedEventType + '"]').removeClass('hidden');
       }
     });
 
